@@ -26,6 +26,8 @@ import styles from './Header.module.scss';
 import images from '~/assets/images';
 import AccountItem from '~/component/AccountItem';
 import Menu from '~/component/Popper/Menu';
+import { MessageIcon } from '~/component/Icons';
+import Image from '~/component/Image';
 
 const cx = classNames.bind(styles);
 const MENU_ITEMS = [
@@ -145,9 +147,11 @@ function Header() {
                                     <FontAwesomeIcon icon={faCloudUpload} />
                                 </button>
                             </Tippy>
-                            {/* <button className={cx('action-btn')}>
-                                <FontAwesomeIcon icon={faMessage} />
-                            </button> */}
+                            <Tippy content="Message" placement="bottom">
+                                <button className={cx('action-btn')}>
+                                    <MessageIcon />
+                                </button>
+                            </Tippy>
                         </>
                     ) : (
                         <>
@@ -157,11 +161,11 @@ function Header() {
                     )}
                     <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChan}>
                         {currentUser ? (
-                            <img
+                            <Image
                                 className={cx('user-avatar')}
                                 alt="Nhut Viet"
                                 src="https://p16-sign-sg.tiktokcdn.com/aweme/1080x1080/tos-alisg-avt-0068/cf3783a73d39cd8eed8d026c7296f1f8.jpeg?lk3s=a5d48078&nonce=80536&refresh_token=28950247c79b3f14f4a184a6e46498f9&x-expires=1725595200&x-signature=KCQrjKMjyOJOcI6A34bB7vmPbwQ%3D&shp=a5d48078&shcp=81f88b70"
-                            ></img>
+                            ></Image>
                         ) : (
                             <button className={cx('more-btn')}>
                                 <FontAwesomeIcon icon={faEllipsisVertical} />
