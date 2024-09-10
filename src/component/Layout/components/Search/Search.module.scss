@@ -55,6 +55,18 @@
     transform: translateY(-50%);
 }
 
+.loading {
+    animation: spinner 1s linear infinite;
+}
+@keyframes spinner {
+    from {
+        transform: translateY(-50%) rotate(0);
+    }
+    to {
+        transform: translateY(-50%) rotate(360deg);
+    }
+}
+
 .search-btn {
     border-top-right-radius: var(--search-border-darius);
     border-bottom-right-radius: var(--search-border-darius);
